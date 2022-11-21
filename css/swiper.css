@@ -1,0 +1,87 @@
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      /* left: -310px; */
+      /* top: -200px; */
+      /* text-align: center; */
+      font-size: 18px;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      /* justify-content: center; */
+      /* -webkit-box-align: center; */
+      -ms-flex-align: center;
+      /* -webkit-align-items: center; */
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+/* 슬라이더 1.정직한가격~ 이부분 버튼 색깔 바꾸기 */
+.swiper-button-next, .swiper-button-prev {
+  color: #000;
+}
+
+/* 양옆 버튼 없애는 방법 */
+.swiper-button-next::after, .swiper-button-prev::after{
+  display: none;
+}
+
+.swiper-button-next {
+  background: url('../img/next.png') no-repeat center;
+  width: 42px;
+  height: 80px;
+  right: 50%;
+  margin-right: -600px;
+  top: 390px;
+}
+
+.swiper-button-prev {
+  background: url('../img/prev.png') no-repeat center;
+  width: 42px;
+  height: 80px;
+  left: 50%;
+  margin-left: -600px;
+  top: 390px;
+}
+
+/* 슬라이더 1.정직한가격~ 1장일때는 왼쪽버튼이 안보임. 3장일때는 오른쪽 버튼이 안보임. */
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+/* bullet 커스텀 */
+.swiper-pagination-bullet {
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  margin: 0 15px !important;
+  opacity: 1;
+  border: 1px solid #000;
+}
+
+/* bullet 움직일떄 커스텀 */
+.swiper-pagination-bullet-active {
+  background: #000;
+}
+
+:root {
+  --swiper-theme-color: #000;
+}
+
+.swiper-horizontal >.swiper-pagination-bullets {
+  bottom: 50px;
+}

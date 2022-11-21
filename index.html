@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GUESS SITE</title>
+    <meta name="veiwport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="./css/initial.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div id="header-wrap">
+        <div id="header-line">
+          <div class="container">
+            <div id="logo">
+              <h1>
+                <a href="index.html"><img src="./img/logo01.png" alt="opensurvey"></a>
+              </h1>
+            </div>
+            <div class="inner">
+              <ul id="gnb">
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">COLLECTIONS</a></li>
+                <li><a href="#">DENIM</a></li>
+                <li><a href="#">BAG</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">PROMOTION</a></li>
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">DENIM FIT</a></li>
+              </ul>
+              <ul id="menu">
+                  <li id="icobox"><a href="#" class="icobtn">
+                    <img src="./img/icoimg01.png" alt="">
+                    </a>
+                  </li>
+                  <li id="icobox"><a href="#" class="icobtn2">
+                    <img src="./img/icoimg02.png" alt="">
+                    <img src="./img/icoimg03.png" alt="" class="icon03">
+                    </a>
+                  </li>
+                <!-- <li id="icobox"><a href="#" class="icobtn3"> -->
+                <!-- </a></li> -->
+              </ul>
+            </div>
+            <div class="curation">
+              <div class="rightmenu">
+                <button type="button" class="btn">
+                  <span class="btn ico"></span>
+                  <span class="cart">0</span>
+                </button>
+                <button type="button" class="btn">
+                  <span class="icon-like"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="mainbanner" class="swiper swiper-container">
+      <div class="swiper-wrapper">
+        <div class="inner swiper-slide first"></div>
+        <div class="inner swiper-slide second"></div>
+        <div class="inner swiper-slide third"></div>
+        <div class="inner swiper-slide fourth"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.css"></script> -->
+    <!-- swiper script area -->
+    <script type="text/javascript">
+      let swiper = new Swiper('.swiper-container', {
+        loop: true, //무한으로 1 2 3 1 2 3 으로 돌아감
+        autoplay: { //자동으로 움직이게함 기다렸다가 몇초뒤에 움직일거냐. 2500- 2.5초 자동플레이
+          delay: 2500 // 기준 ms 2500ms -> 2.5초
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        on: {
+          slideChangeTransitionEnd: function(){
+            console.log(this.realIndex);
+            var thisRealIndex = this.realIndex;
+
+            // 2.방식
+            if ( thisRealIndex == 0 ) {//thisActive가 1 또는 4일때
+              window.document.body.querySelector('#mainbanner').style.backgroundImage = 'url(img/main01.jpg)'
+              // gnb li a태그들의 스타일-color색깔을 바꿔준다.
+              // window.document.body.querySelector('#gnb li a').style.color = '#666666';
+              window.document.body.querySelector('#header').classList.remove('darkbg');
+            }else if( thisRealIndex == 1 ){
+              window.document.body.querySelector('#mainbanner').style.backgroundImage = 'url(img/main02.jpg)';
+              // window.document.body.querySelector('#gnb li a').style.color = '#ffffff';
+              window.document.body.querySelector('#header').classList.add('darkbg');
+            }else if ( thisRealIndex == 2 ){
+              window.document.body.querySelector('#mainbanner').style.backgroundImage = 'url(img/main03.jpg)'
+              // window.document.body.querySelector('#gnb li a').style.color = '#ffffff';
+              window.document.body.querySelector('#header').classList.add('darkbg');
+            }else if ( thisRealIndex == 3 ){
+              window.document.body.querySelector('#mainbanner').style.backgroundImage = 'url(img/main04.jpg)'
+              window.document.body.querySelector('#header').classList.add('darkbg');
+          }
+        }
+      }
+    });
+    </script>
+
+  </body>
+</html>
